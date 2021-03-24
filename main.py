@@ -19,15 +19,21 @@ while True:
             while True:
                 message_a_chiff = input("Entrez le message a chiffrer: ")
                 message_a_chiff = message_a_chiff.lower()
+                #print(message_a_chiff)
                 """for lettre2 in message_a_chiff:
                     cara_erreur(lettre2,liste_cara_speciaux)"""
                 while True:
                     decal = int(input("Entrez le decalage que vous voulez: "))
                     print("Chiffre de décalage confirmé : " + str(decal))
                     break
-                for lettre in message_a_chiff:
-                    message_chiffre += CesarChiff(lettre,liste_lettre,decal)
-                print(message_chiffre)
+                
+                print(CesarChiff(decal,message_a_chiff))
+                file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
+                if file == "oui":
+                    with open("test.txt","w") as f:
+                        f.write(CesarChiff(message_a_chiff,decal))
+                else:
+                    print("comme vous voudez")
                 """chiff_copier.append(message_chiffre)
                 cop =' '.join(chiff_copier)
                 if cop == message_chiffre:
@@ -66,13 +72,13 @@ while True:
                 for i in range(3):
                     print(".")
                     sleep(1)
-                # Generation de p et q
+                ####### Generation de p et q ########
                 r = r.SystemRandom()
                 p =liste1[r.randrange(len(liste1))]
                 q = PremierDifference(p)
                 n = p * q
                 phi_n = (p-1)*(q-1)
-                #Choix d'un exposant e et calcul de son inverse d
+                ######## Choix d'un exposant e et calcul de son inverse d ########
                 e = r.choice(liste1)
                 d = euclide_etendu(e, phi_n)
                 print ("Cle publique :", e, "\nModulo :", n,"\nCle prive :", d)
