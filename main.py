@@ -20,7 +20,7 @@ while True:
                     if liste_cara_speciaux[i] == lettre:
                         print("Pas de cara speciaux")
                         return True
-            def chiffrage_cesar(lettre,liste_lettre,decal):
+            def cesarChiff(lettre,liste_lettre,decal):
                 for i in range(len(liste_lettre)):
                     if lettre == ' ':
                         return ' '
@@ -36,7 +36,7 @@ while True:
                     print("Chiffre de décalage confirmé : " + str(decal))
                     break
                 for lettre in message_a_chiff:
-                    message_chiffre += chiffrage_cesar(lettre,liste_lettre,decal)
+                    message_chiffre += cesarChiff(lettre,liste_lettre,decal)
                 print(message_chiffre)
                 """chiff_copier.append(message_chiffre)
                 cop =' '.join(chiff_copier)
@@ -52,7 +52,7 @@ while True:
                     print("rentrez oui ou non!")
         elif choixchiff == 2:
             print("on va chiffrer en xor")
-            def xorCrypt(str, key):
+            def xorChiff(str, key):
                 output = ""
                 for x in range(0, len(str)):
                     output += chr(key ^ ord(str[x]))
@@ -66,7 +66,7 @@ while True:
                     except ValueError:
                         print("Mettez un chiffre !")
                 print("Cle confirmé : " + str(clef))
-                print(xorCrypt(message_a_chiff,clef))
+                print(xorChiff(message_a_chiff,clef))
                 stop = input("Voulez arreter de chiffrer(oui/non): ")
                 if stop == "oui":
                     break
