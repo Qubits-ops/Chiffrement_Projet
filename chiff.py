@@ -1,6 +1,18 @@
-liste_lettre=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-liste_cara_speciaux = ["é","!","à","à","â","ä","è","é","ê","ë","î","ï","ò","ô","ö","ù","û","ü","ç","?"]
+def cryptage(cle, lettre):
+    """Encode une lettre grâce à une clé. L'encodage est le déplacement
+    de la lettre dans l'alphabet par rapport à la valeur de la clé"""
+    
+    #Si la lettre est en majuscule
+    if 65 <= ord(lettre) <= 90:
+        return chr(65 + (ord(lettre)-65+cle) % 26)
 
+    #Si la lettre est en minuscule
+    elif 97 <= ord(lettre) <= 122:
+        return chr(97 + (ord(lettre)-97+cle) % 26)
+        
+    #Si ce n'est pas une lettre
+    else:
+        return lettre
 def RsaChiff(message, e, n):
     i = 0
     message_chiffre = ""
@@ -12,13 +24,12 @@ def RsaChiff(message, e, n):
         message_chiffre += bloc
         i+=1
     return message_chiffre
-def CesarChiff(lettre,liste_lettre,decal):
-    for i in range(len(liste_lettre)):
-        if lettre == ' ':
-            return ' '
-        elif liste_lettre[i] == lettre:
-            return str(liste_lettre[i+decal])
-message_chiffre = str()
+def CesarChiff(cle, mot):
+    mot_crypte = ""
+    for lettre in mot:
+        mot_crypte += cryptage(cle, lettre)
+
+    return mot_crypte
 def XorChiff(str, key):
     output = ""
     for x in range(0, len(str)):
