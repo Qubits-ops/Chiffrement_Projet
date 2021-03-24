@@ -18,6 +18,8 @@ while True:
             print("on va chiffrer avec notre ami cesar")
             while True:
                 message_a_chiff = input("Entrez le message a chiffrer: ")
+                message_a_chiff = input("Entrez le message a chiffrer: ")
+                message_a_chiff = message_a_chiff.lower()
                 """for lettre2 in message_a_chiff:
                     cara_erreur(lettre2,liste_cara_speciaux)"""
                 while True:
