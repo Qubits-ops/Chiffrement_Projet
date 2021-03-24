@@ -65,13 +65,13 @@ while True:
                 for i in range(3):
                     print(".")
                     sleep(1)
-                ####### Generation de p et q ########
+                # Generation de p et q
                 r = r.SystemRandom()
                 p =liste1[r.randrange(len(liste1))]
                 q = PremierDifference(p)
                 n = p * q
                 phi_n = (p-1)*(q-1)
-                ######## Choix d'un exposant e et calcul de son inverse d ########
+                #Choix d'un exposant e et calcul de son inverse d
                 e = r.choice(liste1)
                 d = euclide_etendu(e, phi_n)
                 print ("Cle publique :", e, "\nModulo :", n,"\nCle prive :", d)
