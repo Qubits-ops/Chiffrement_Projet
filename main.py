@@ -18,7 +18,7 @@ while True:
             def cara_erreur(lettre,liste_cara_speciaux):
                 for i in range(len(liste_cara_speciaux)):
                     if liste_cara_speciaux[i] == lettre:
-                        print(str("Pas de cara speciaux"))
+                        print("Pas de cara speciaux")
                         return True
             def chiffrage_cesar(lettre,liste_lettre,decal):
                 for i in range(len(liste_lettre)):
