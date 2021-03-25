@@ -24,10 +24,10 @@ def RsaChiff(message, e, n):
         message_chiffre += bloc
         i+=1
     return message_chiffre
-def CesarChiff(cle, mot):
+def CesarChiff(message_a_chiff, decal):
     mot_crypte = ""
-    for lettre in mot:
-        mot_crypte += cryptage(cle, lettre)
+    for lettre in message_a_chiff:
+        mot_crypte += cryptage(decal, lettre)
 
     return mot_crypte
 def XorChiff(str, key):
