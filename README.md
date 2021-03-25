@@ -1,3 +1,5 @@
+for execute the program type python main.py or sudo python main.py
+
 install cx_Freeze:
 
 execute install.sh or execute pip install cx_Freeze
