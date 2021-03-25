@@ -1,5 +1,5 @@
-install:
-cx_Freeze
+install cx_Freeze:
+
 execute install.sh or execute pip install cx_Freeze
 
 for create executable(.exe) execute this commands in your terminal:
