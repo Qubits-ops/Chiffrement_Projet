@@ -13,17 +13,6 @@ def cryptage(cle, lettre):
     #Si ce n'est pas une lettre
     else:
         return lettre
-def RsaChiff(message, e, n):
-    i = 0
-    message_chiffre = ""
-    while i != len(message):
-        bloc = str(pow(ord(message[i]),e)%n)
-        print(bloc)
-        while(len(bloc) != 6):
-            bloc = "0" + bloc
-        message_chiffre += bloc
-        i+=1
-    return message_chiffre
 def CesarChiff(message_a_chiff, decal):
     mot_crypte = ""
     for lettre in message_a_chiff:
