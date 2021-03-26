@@ -24,3 +24,22 @@ def XorChiff(str, key):
     for x in range(0, len(str)):
         output += chr(key ^ ord(str[x]))
     return output
+def genererclé(string, mdp): 
+  """""Utilisez la fonction genererclé pour générer la clé. Le mot-clé est annexé à lui-même jusqu'à ce que la longueur du message soit égale à la longueur de la clé."""""
+  mdp = list(mdp) 
+  if len(string) == len(mdp): 
+    return(mdp) 
+  else: 
+    for i in range(len(string) -len(mdp)): 
+      mdp.append(mdp[i % len(mdp)]) 
+  return("" . join(mdp)) 
+  
+def crypt(string, mdp):
+#Une fois que le cryptage utilisé par la clé généré () pour chiffrer le message qui prend deux arguments, un est le message qui doit être crypté et  le deuxième argument est la clé qui renvoie le texte crypté.
+#Dans la fonction de cryptage, le message et la clé sont ajoutés MODULO 26
+  crypt_text = [] 
+  for i in range(len(string)): 
+    x = (ord(string[i]) +ord(mdp[i])) % 26
+    x += ord('A') 
+    crypt_text.append(chr(x)) 
+  return("" . join(crypt_text)) 
