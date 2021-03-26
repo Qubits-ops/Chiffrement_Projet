@@ -11,11 +11,3 @@ def pgcd(a,b):
     while a%b != 0:
         a, b = b, a%b
     return b
-# Algorithme d'Euclide etendu
-def euclide_etendu(e, phi_n) :
-  d = 1 
-  temp = (e*d)%phi_n
-  while(temp != 1):
-    d = d+1
-    temp = (e*d)%phi_n
-  return d
