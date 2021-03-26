@@ -24,6 +24,9 @@ def XorChiff(str, key):
     for x in range(0, len(str)):
         output += chr(key ** ord(str[x]))
     return output
+"""
+fonctions pour code vigenere
+"""
 def genererclé(string, mdp): 
   """""Utilisez la fonction genererclé pour générer la clé. Le mot-clé est annexé à lui-même jusqu'à ce que la longueur du message soit égale à la longueur de la clé."""""
   mdp = list(mdp) 
