@@ -43,3 +43,12 @@ def crypt(string, mdp):
     x += ord('A') 
     crypt_text.append(chr(x)) 
   return("" . join(crypt_text)) 
+def decrypt(crypt_text, mdp):
+#Utilisez la fonction de déchiffrement pour déchiffrer le message crypté. Cela prend deux arguments l'un est le texte crypté et le second est la clé utilisée pour le cryptage.
+#Dans le texte de cryptage de la fonction de déchiffrement et la clé est soustrait, puis ajouté 26 modulo 26.
+  orig_text = [] 
+  for i in range(len(crypt_text)): 
+    x = (ord(crypt_text[i]) -ord(mdp[i]) + 26) % 26
+    x += ord('A') 
+    orig_text.append(chr(x)) 
+  return("" . join(orig_text)) 
