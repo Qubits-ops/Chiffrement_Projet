@@ -37,8 +37,8 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 print(CesarChiff(message_a_chiff,decal))
                 #demande a l'user si il veut stocker sont texte,phrase,mot crypter dans un fichier et lui demande qu'elle nom il veux lui donner
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
-                nom_file = input("Qu'elle nom lui donner vous: ") 
                 if file == "oui":
+                    nom_file = input("Qu'elle nom lui donner vous: ") 
                     #si le dossier X n'existe pas il le cree
                     if not os.path.exists("X"):
                         os.makedirs("X")
@@ -92,8 +92,8 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 print(XorChiff(message_a_chiff,clef))
                 #expliquer plus haut
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
-                nom_file = input("Qu'elle nom lui donner vous: ") 
                 if file == "oui":
+                    nom_file = input("Qu'elle nom lui donner vous: ") 
                     if not os.path.exists("X"):
                         os.makedirs("X")
                     if os.path.exists("X"):
@@ -128,9 +128,9 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 print("Message crypter:",crypt_text) 
                 print("Message decrypter:", decrypt(crypt_text, mdp))#Enfin, renvoyez les messages cryptés et déchiffrés.
                 #expliquer plus haut
-                file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
-                nom_file = input("Qu'elle nom lui donner vous: ") 
+                file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ") 
                 if file == "oui":
+                    nom_file = input("Qu'elle nom lui donner vous: ") 
                     if not os.path.exists("X"):
                         os.makedirs("X")
                     if os.path.exists("X"):
@@ -160,8 +160,8 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 print(QubitChiff(message_a_chiff))
                 #expliquer plus haut
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
-                nom_file = input("Qu'elle nom lui donner vous: ") 
                 if file == "oui":
+                    nom_file = input("Qu'elle nom lui donner vous: ") 
                     if not os.path.exists("X"):
                         os.makedirs("X")
                     if os.path.exists("X"):
@@ -185,10 +185,10 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                     continue
                 else:
                     print("rentrez oui ou non!")
-    """si l'utilisateur choisis 2 on dechiffre pas encore mis en place oscar fais de sont cote et moi du miens donc quand je copie sont code
-        dans le projet il ya le dechiffrement du viginere dans le choix chiffrer mais on compte tout arranger quand on aura finis tous 
-        les dechiffrages et tout placer dans choix 2 donc dechiffrer.
-    """
+                """si l'utilisateur choisis 2 on dechiffre pas encore mis en place oscar fais de sont cote et moi du miens donc quand je copie sont code
+                dans le projet il ya le dechiffrement du viginere dans le choix chiffrer mais on compte tout arranger quand on aura finis tous 
+                les dechiffrages et tout placer dans choix 2 donc dechiffrer.
+                """
     elif choix == 2:
         print("on va dechiffrer")
     #stop le programme si l'user decide d'arreter le programme.
@@ -199,3 +199,4 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
     else:
         print("choisissez 1,2,3")
         continue
+
