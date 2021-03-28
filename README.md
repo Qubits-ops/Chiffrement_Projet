@@ -1,4 +1,4 @@
--- Projet Chiffrment Terminal NSI --
+-- Projet Chiffrement Terminal NSI --
 
 Objectif:
 
