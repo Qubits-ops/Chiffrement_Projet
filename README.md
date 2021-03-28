@@ -4,8 +4,10 @@ Faire differents chifffrements,dechifrements Xor Cesar Vigenere QubitChiff RSA(a
 Pour le prototypage et spécification les entrées, les traitements, les sorties voir code
 On a crée les differents chiffrements(tout au long de la semaine ) et on fini les dechiffrements de certain.
 On va ensuite crée un site internet avec flask (début le dimanche 28 mars ).
+
 Les difficultés rencontrées:
 - Vigenere bien comprendre comment fonctionne ce chiffrement.
 -cryptage des lettre , congruences pour le RSA
+
 Solutions:
 - regarder des video qui explique / les aides du Professeur
