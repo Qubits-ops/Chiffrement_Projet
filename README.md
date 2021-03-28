@@ -7,7 +7,11 @@ On va ensuite crée un site internet avec flask (début le dimanche 28 mars ).
 
 Les difficultés rencontrées:
 - Vigenere bien comprendre comment fonctionne ce chiffrement.
--cryptage des lettre , congruences pour le RSA
+
+- cryptage des lettres , congruences pour le RSA
 
 Solutions:
 - regarder des video qui explique / les aides du Professeur
+
+date:
+- viens d'etre creer donc tout sera rajouter a la prochaine evaluation du projet
