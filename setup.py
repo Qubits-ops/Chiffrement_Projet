@@ -1,5 +1,5 @@
-from cx_Freeze import setup, Executable
-
+from cx_Freeze import setup, Executable#importe bibliotheque cxFreeze pour creer un executable
+#creer un executable
 setup(
     name = "Chiffrement",
     version = "0.1",
