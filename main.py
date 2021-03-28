@@ -15,6 +15,8 @@ while True:
         print("-1- Cesar chiffrement")
         print("-2- Xor chiffrement")
         print("-3- Rsa chiffrement")
+        print("-4- Vigenere")
+        print("-5- QubitChiff")
         choixchiff = int(input("Entrez votre choix: "))
         if choixchiff == 1:
             print("on va chiffrer avec notre ami cesar")
@@ -74,6 +76,24 @@ while True:
                         print("Mettez un chiffre !")
                 print("Cle confirmé : " + str(clef))
                 print(XorChiff(message_a_chiff,clef))
+                file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
+                nom_file = input("Qu'elle nom lui donner vous: ") 
+                if file == "oui":
+                    if not os.path.exists("X"):
+                        os.makedirs("X")
+                    if os.path.exists("X"):
+                        path = "/Users/Tarkov/Desktop/general/X"
+                        completeName = os.path.join(path, nom_file)
+                        print("sauvegarder ici " + completeName)
+                        while True:
+                            if os.path.join(path):
+                                if os.path.exists(nom_file):
+                                    print("se fichier existe deja donner un autre nom")
+                                    continue
+                                break
+                        file1 = open(completeName, "w")
+                        file1.write(XorChiff(message_a_chiff,clef))
+                        file1.close()
                 stop = input("Voulez arreter de chiffrer(oui/non): ")
                 if stop == "oui":
                     break
@@ -82,25 +102,62 @@ while True:
                 else:
                     print("rentrez oui ou non!")
         elif choixchiff == 3:
+            pass
+        elif choixchiff == 4:
             while True:
-                print("on va chiffrer en Rsa")
-                message = input('Entrez le message a chiffrer: ')
-                for i in range(3):
-                    print(".")
-                    sleep(1)
-                ####### Generation de p et q ########
-                r = r.SystemRandom()
-                p =liste1[r.randrange(len(liste1))]
-                q = PremierDifference(p)
-                n = p * q
-                phi_n = (p-1)*(q-1)
-                ######## Choix d'un exposant e et calcul de son inverse d ########
-                e = r.choice(liste1)
-                d = euclide_etendu(e, phi_n)
-                print ("Cle publique :", e, "\nModulo :", n,"\nCle prive :", d)
-                # n et e = cle publique, d = cle prive
-                print ("\nEt voila le travail :\n", RsaChiff(message, e, n))
-                print(pgcd(252,360))
+                string = input("Entre le message: ")
+                motclé = input("Entre le mot-clé: ")
+                mdp = genererclé(string, motclé) 
+                crypt_text = crypt(string,mdp) 
+                print("Message crypter:",crypt_text) 
+                print("Message decrypter:", decrypt(crypt_text, mdp))#Enfin, renvoyez les messages cryptés et déchiffrés.
+                file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
+                nom_file = input("Qu'elle nom lui donner vous: ") 
+                if file == "oui":
+                    if not os.path.exists("X"):
+                        os.makedirs("X")
+                    if os.path.exists("X"):
+                        path = "/Users/Tarkov/Desktop/general/X"
+                        completeName = os.path.join(path, nom_file)
+                        print("sauvegarder ici " + completeName)
+                        while True:
+                            if os.path.join(path):
+                                if os.path.exists(nom_file):
+                                    print("se fichier existe deja donner un autre nom")
+                                    continue
+                                break
+                        file1 = open(completeName, "w")
+                        file1.write(crypt_text)
+                        file1.close()
+                stop = input("Voulez arreter de chiffrer(oui/non): ")
+                if stop == "oui":
+                    break
+                elif stop == "non":
+                    continue
+                else:
+                    print("rentrez oui ou non!")
+        elif choixchiff == 5:
+            while True:
+                message_a_chiff = input("rentre le message a chiffrer")
+                print(QubitChiff(message_a_chiff))
+                file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
+                nom_file = input("Qu'elle nom lui donner vous: ") 
+                if file == "oui":
+                    if not os.path.exists("X"):
+                        os.makedirs("X")
+                    if os.path.exists("X"):
+                        path = "/Users/Tarkov/Desktop/general/X"
+                        completeName = os.path.join(path, nom_file)
+                        print("sauvegarder ici " + completeName)
+                        while True:
+                            if os.path.join(path):
+                                if os.path.exists(nom_file):
+                                    print("se fichier existe deja donner un autre nom")
+                                    continue
+                                break
+                        file1 = open(completeName, "w")
+                        file1.write(QubitChiff(message_a_chiff))
+                        file1.close()
                 stop = input("Voulez arreter de chiffrer(oui/non): ")
                 if stop == "oui":
                     break
