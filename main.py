@@ -1,17 +1,20 @@
-from chiff import *
-from math2 import *
-from time import *
-import os
+from chiff import *#importe notre propre bibliotheque ou il y a les fonctions de chiffrement
+from math2 import *#importe notre propre bibliotheque math ou il y a les fonctions de math
+from time import *#importe la bibliotheque time
+import os #importe la bibliotheque os pour fournir une façon portable d'utiliser les fonctionnalités dépendantes du système d'exploitation.
+#liste des nombres premiers de 101 a 997 qui sera utile pour le chiffrement RSA
 liste1 = [101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311,313,317,331,337,347,349,353,359,367,373,379,383,389,397,401,409,419,421,431,433,439,443,449,457,461,463,467,479,487,491,499,503,509,521,523,541,547,557,563,569,571,577,587,593,599,601,607,613,617,619,631,641,643,647,653,659,661,673,677,683,691,701,709,719,727,733,739,743,751,757,761,769,773,787,797,809,811,821,823,827,829,839,853,857,859,863,877,881,883,887,907,911,919,929,937,941,947,953,967,971,977,983,991,997]
-path = "/Users/Tarkov/Desktop/general"
-while True:
+path = "/Users/Tarkov/Desktop/general"#chemin choisis ou creer le dossier stocker dans la var path
+while True:#fais une boucle infinis pour tout le programme afin de redemander chaque action a l'utilisateur
     print("--------Bienvenue dans la matrix--------")
+    #demande si l'user veux chiffrer dechiffrer ou stop le prog
     print("Que souhaitez-vous faire ? Tapez le chiffre correspondant")
     print("-1- Chiffrer")
     print("-2- Déchiffrer")
     print("-3- Retour")
     choix = int(input("Entrez votre choix: "))
     if choix == 1:
+        #choix de l'utilisateur
         print("-1- Cesar chiffrement")
         print("-2- Xor chiffrement")
         print("-3- Rsa chiffrement")
@@ -32,24 +35,32 @@ while True:
                     break
                 
                 print(CesarChiff(message_a_chiff,decal))
+                #demande a l'user si il veut stocker sont texte,phrase,mot crypter dans un fichier et lui demande qu'elle nom il veux lui donner
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
                 nom_file = input("Qu'elle nom lui donner vous: ") 
                 if file == "oui":
+                    #si le dossier X n'existe pas il le cree
                     if not os.path.exists("X"):
                         os.makedirs("X")
+                    #si il existe il prend le chemin du dossier et le sauvegarde a l'emplacement specifier
                     if os.path.exists("X"):
                         path = "/Users/Tarkov/Desktop/general/X"
                         completeName = os.path.join(path, nom_file)
                         print("sauvegarder ici " + completeName)
                         while True:
                             if os.path.join(path):
+                                #si le fichier existe deja il demande a l'user de saisir un autre nom pour le fichier
                                 if os.path.exists(nom_file):
                                     print("se fichier existe deja donner un autre nom")
                                     continue
                                 break
+                        #ouvre le fichier
                         file1 = open(completeName, "w")
+                        #ecrit dedans le message crypter
                         file1.write(CesarChiff(message_a_chiff,decal))
+                        #ferme le fichier
                         file1.close()
+                #sinon il ne fais rien si l'user refuse de sauvegarder dans un fichier
                 else:
                     print("comme vous voudez")
                 """chiff_copier.append(message_chiffre)
@@ -57,6 +68,7 @@ while True:
                 if cop == message_chiffre:
                 print("deja chiffrer")
                 break"""
+                #demande a l'user si il veux arreter de chiffrer
                 stop = input("Voulez arreter de chiffrer(oui/non): ")
                 if stop == "oui":
                     break
@@ -69,13 +81,16 @@ while True:
             while True:
                 message_a_chiff = input("Entrez le message a chiffrer: ")
                 while True:
+                    #verifie si dnas la var clef on as bien rentrez un nombre sinon erreur
                     try:
                         clef = int(input("Entrez la cle de chiff que vous voulez: "))
                         break
                     except ValueError:
                         print("Mettez un chiffre !")
+                #confirme le nombre rentrez et l'affiche a l'user
                 print("Cle confirmé : " + str(clef))
                 print(XorChiff(message_a_chiff,clef))
+                #expliquer plus haut
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
                 nom_file = input("Qu'elle nom lui donner vous: ") 
                 if file == "oui":
@@ -94,6 +109,7 @@ while True:
                         file1 = open(completeName, "w")
                         file1.write(XorChiff(message_a_chiff,clef))
                         file1.close()
+                #demande a l'user si il veux arreter de chiffrer
                 stop = input("Voulez arreter de chiffrer(oui/non): ")
                 if stop == "oui":
                     break
@@ -111,6 +127,7 @@ while True:
                 crypt_text = crypt(string,mdp) 
                 print("Message crypter:",crypt_text) 
                 print("Message decrypter:", decrypt(crypt_text, mdp))#Enfin, renvoyez les messages cryptés et déchiffrés.
+                #expliquer plus haut
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
                 nom_file = input("Qu'elle nom lui donner vous: ") 
                 if file == "oui":
@@ -129,6 +146,7 @@ while True:
                         file1 = open(completeName, "w")
                         file1.write(crypt_text)
                         file1.close()
+                 #demande a l'user si il veux arreter de chiffrer
                 stop = input("Voulez arreter de chiffrer(oui/non): ")
                 if stop == "oui":
                     break
@@ -140,6 +158,7 @@ while True:
             while True:
                 message_a_chiff = input("rentre le message a chiffrer")
                 print(QubitChiff(message_a_chiff))
+                #expliquer plus haut
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
                 nom_file = input("Qu'elle nom lui donner vous: ") 
                 if file == "oui":
@@ -158,6 +177,7 @@ while True:
                         file1 = open(completeName, "w")
                         file1.write(QubitChiff(message_a_chiff))
                         file1.close()
+                 #demande a l'user si il veux arreter de chiffrer
                 stop = input("Voulez arreter de chiffrer(oui/non): ")
                 if stop == "oui":
                     break
@@ -165,8 +185,17 @@ while True:
                     continue
                 else:
                     print("rentrez oui ou non!")
+    """si l'utilisateur choisis 2 on dechiffre pas encore mis en place oscar fais de sont cote et moi du miens donc quand je copie sont code
+        dans le projet il ya le dechiffrement du viginere dans le choix chiffrer mais on compte tout arranger quand on aura finis tous 
+        les dechiffrages et tout placer dans choix 2 donc dechiffrer.
+    """
     elif choix == 2:
         print("on va dechiffrer")
-    else:
+    #stop le programme si l'user decide d'arreter le programme.
+    elif choix == 3:
         print("retour")
         break
+    #si l'user ne fais pas les bons choix erreur
+    else:
+        print("choisissez 1,2,3")
+        continue
