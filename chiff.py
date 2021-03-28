@@ -48,14 +48,14 @@ def CesarChiff(message_a_chiff:str, decal:int)->str:
 
     return mot_crypte
 def XorChiff(str:str, key:int)->str:
- """se deplace dans l'alphabet selon chaque mot et selon une cle de decalage puis retourne une chaine de caractere avec le meme fonctionnement que chiff cesar"""
+#se deplace dans l'alphabet selon chaque mot et selon une cle de decalage puis retourne une chaine de caractere avec le meme fonctionnement que chiff cesar"""
     output = ""
     for x in range(0, len(str)):
         output += chr(key ^ ord(str[x]))
     return output
     
 def convertirEnBinaire(num:int)->str:
-"""convertis en binaire un nombre donner"""
+#convertis en binaire un nombre donner
     list = []
     while num > 0:
         if (num % 2) == 0:#si divisible par 2
@@ -65,24 +65,24 @@ def convertirEnBinaire(num:int)->str:
         num//=2 #division euclidienne par 2
     return int(''.join(map(str, list[::-1])))
 def QubitChiff(message_a_chiff:str)->str:
-"""
-methode de chiffrement simple par Qubit
-pour dechiffrer convertir les 7 premiers bits du code binaire jusqu'a la fin
-exemple:
-11101001110101110110011000011110011 = 1110100 1110101 1101100 1100001 1110011
+    """
+    methode de chiffrement simple par Qubit
+    pour dechiffrer convertir les 7 premiers bits du code binaire jusqu'a la fin
+    exemple:
+    11101001110101110110011000011110011 = 1110100 1110101 1101100 1100001 1110011
                                         116    117     108      97      115
-ensuite
-116 = t
-117 = u
-108 = l
-97 = a
-115 = s
-c'est le code ASCII des lettre puis on a juste a inverser le tout
-115 97 108 117 116
- s   a  l   u   t
-11101001110101110110011000011110011 = salut
-voila comment dechiffrer ma methode de chiffrement
-"""
+    ensuite
+    116 = t
+    117 = u
+    108 = l
+    97 = a
+    115 = s
+    c'est le code ASCII des lettre puis on a juste a inverser le tout
+    115 97 108 117 116
+     s   a  l   u   t
+    11101001110101110110011000011110011 = salut
+    voila comment dechiffrer ma methode de chiffrement
+    """
     mess = []
     mess_chiff = []
     k = []
@@ -101,3 +101,4 @@ voila comment dechiffrer ma methode de chiffrement
         
 #print(QubitChiff("salut"))
     
+
