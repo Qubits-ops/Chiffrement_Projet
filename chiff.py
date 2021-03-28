@@ -1,4 +1,4 @@
-def cryptage(cle, lettre):
+def cryptage(cle:int, lettre:str)->str:
     """Encode une lettre grâce à une clé. L'encodage est le déplacement
     de la lettre dans l'alphabet par rapport à la valeur de la clé"""
     
@@ -13,22 +13,8 @@ def cryptage(cle, lettre):
     #Si ce n'est pas une lettre
     else:
         return lettre
-def CesarChiff(message_a_chiff, decal):
-    mot_crypte = ""
-    for lettre in message_a_chiff:
-        mot_crypte += cryptage(decal, lettre)
-
-    return mot_crypte
-def XorChiff(str, key):
-    output = ""
-    for x in range(0, len(str)):
-        output += chr(key ** ord(str[x]))
-    return output
-"""
-fonctions pour code vigenere
-"""
-def genererclé(string, mdp): 
-  """""Utilisez la fonction genererclé pour générer la clé. Le mot-clé est annexé à lui-même jusqu'à ce que la longueur du message soit égale à la longueur de la clé."""""
+def genererclé(string:str, mdp:str)->str: 
+  """""Utilisez la fonction genererclé pour générer la clé. Le mot-clé est annexé à lui-même jusqu'à ce que la longueur du message soit égale à la longueur de la clé."""
   mdp = list(mdp) 
   if len(string) == len(mdp): 
     return(mdp) 
@@ -36,8 +22,7 @@ def genererclé(string, mdp):
     for i in range(len(string) -len(mdp)): 
       mdp.append(mdp[i % len(mdp)]) 
   return("" . join(mdp)) 
-  
-def crypt(string, mdp):
+def crypt(string:str, mdp:str)->str:
 #Une fois que le cryptage utilisé par la clé généré () pour chiffrer le message qui prend deux arguments, un est le message qui doit être crypté et  le deuxième argument est la clé qui renvoie le texte crypté.
 #Dans la fonction de cryptage, le message et la clé sont ajoutés MODULO 26
   crypt_text = [] 
@@ -46,15 +31,40 @@ def crypt(string, mdp):
     x += ord('A') 
     crypt_text.append(chr(x)) 
   return("" . join(crypt_text)) 
-def decrypt(crypt_text, mdp):
+def decrypt(crypt_text:str, mdp:str)->str:
 #Utilisez la fonction de déchiffrement pour déchiffrer le message crypté. Cela prend deux arguments l'un est le texte crypté et le second est la clé utilisée pour le cryptage.
 #Dans le texte de cryptage de la fonction de déchiffrement et la clé est soustrait, puis ajouté 26 modulo 26.
-  orig_text = [] 
+  orig_text = []
   for i in range(len(crypt_text)): 
     x = (ord(crypt_text[i]) -ord(mdp[i]) + 26) % 26
     x += ord('A') 
     orig_text.append(chr(x)) 
   return("" . join(orig_text)) 
+def CesarChiff(message_a_chiff:str, decal:int)->str:
+    """se refere a la fonction cryptage puis ajoute tous dans la variable mot crypter qui est renvoyer ensuite"""
+    mot_crypte = ""
+    for lettre in message_a_chiff:
+        mot_crypte += cryptage(decal, lettre)
+
+    return mot_crypte
+def XorChiff(str:str, key:int)->str:
+ """se deplace dans l'alphabet selon chaque mot et selon une cle de decalage puis retourne une chaine de caractere avec le meme fonctionnement que chiff cesar"""
+    output = ""
+    for x in range(0, len(str)):
+        output += chr(key ^ ord(str[x]))
+    return output
+    
+def convertirEnBinaire(num:int)->str:
+"""convertis en binaire un nombre donner"""
+    list = []
+    while num > 0:
+        if (num % 2) == 0:#si divisible par 2
+            list.append(0)
+        else:
+            list.append(1)
+        num//=2 #division euclidienne par 2
+    return int(''.join(map(str, list[::-1])))
+def QubitChiff(message_a_chiff:str)->str:
 """
 methode de chiffrement simple par Qubit
 pour dechiffrer convertir les 7 premiers bits du code binaire jusqu'a la fin
@@ -73,16 +83,6 @@ c'est le code ASCII des lettre puis on a juste a inverser le tout
 11101001110101110110011000011110011 = salut
 voila comment dechiffrer ma methode de chiffrement
 """
-def convertirEnBinaire(num):
-    list = []
-    while num > 0:
-        if (num % 2) == 0:#si divisible par 2
-            list.append(0)
-        else:
-            list.append(1)
-        num//=2 #division euclidienne par 2
-    return int(''.join(map(str, list[::-1])))
-def QubitChiff(message_a_chiff):
     mess = []
     mess_chiff = []
     k = []
@@ -99,4 +99,5 @@ def QubitChiff(message_a_chiff):
     return "".join(j)
     #return "".join(mess)
         
-
+#print(QubitChiff("salut"))
+    
