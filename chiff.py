@@ -55,3 +55,48 @@ def decrypt(crypt_text, mdp):
     x += ord('A') 
     orig_text.append(chr(x)) 
   return("" . join(orig_text)) 
+"""
+methode de chiffrement simple par Qubit
+pour dechiffrer convertir les 7 premiers bits du code binaire jusqu'a la fin
+exemple:
+11101001110101110110011000011110011 = 1110100 1110101 1101100 1100001 1110011
+                                        116    117     108      97      115
+ensuite
+116 = t
+117 = u
+108 = l
+97 = a
+115 = s
+c'est le code ASCII des lettre puis on a juste a inverser le tout
+115 97 108 117 116
+ s   a  l   u   t
+11101001110101110110011000011110011 = salut
+voila comment dechiffrer ma methode de chiffrement
+"""
+def convertirEnBinaire(num):
+    list = []
+    while num > 0:
+        if (num % 2) == 0:#si divisible par 2
+            list.append(0)
+        else:
+            list.append(1)
+        num//=2 #division euclidienne par 2
+    return int(''.join(map(str, list[::-1])))
+def QubitChiff(message_a_chiff):
+    mess = []
+    mess_chiff = []
+    k = []
+    j = []
+    for i in message_a_chiff:
+        mess.append(i)
+    mess = list(reversed(mess))
+    for i in mess:
+        mess_chiff.append(ord(i))
+    for i in mess_chiff:
+        k.append(convertirEnBinaire(i))
+    for i in k:
+        j.append(str(i))
+    return "".join(j)
+    #return "".join(mess)
+        
+
