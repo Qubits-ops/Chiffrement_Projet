@@ -16,4 +16,4 @@ Solutions:
 - regarder des video qui explique / les aides du Professeur
 
 date:
-- viens d'etre creer donc tout sera rajouter a la prochaine evaluation du projet
+- (sam)Mardi 30 mars j'ai améliorer la partie creation d'un dossier et chemin de creation fichier dossier de 9h30 a 11h30 en classe. 
