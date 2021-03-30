@@ -1,10 +1,31 @@
+
 from chiff import *#importe notre propre bibliotheque ou il y a les fonctions de chiffrement
 from math2 import *#importe notre propre bibliotheque math ou il y a les fonctions de math
 from time import *#importe la bibliotheque time
 import os #importe la bibliotheque os pour fournir une façon portable d'utiliser les fonctionnalités dépendantes du système d'exploitation.
 #liste des nombres premiers de 101 a 997 qui sera utile pour le chiffrement RSA
-liste1 = [101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311,313,317,331,337,347,349,353,359,367,373,379,383,389,397,401,409,419,421,431,433,439,443,449,457,461,463,467,479,487,491,499,503,509,521,523,541,547,557,563,569,571,577,587,593,599,601,607,613,617,619,631,641,643,647,653,659,661,673,677,683,691,701,709,719,727,733,739,743,751,757,761,769,773,787,797,809,811,821,823,827,829,839,853,857,859,863,877,881,883,887,907,911,919,929,937,941,947,953,967,971,977,983,991,997]
-path = "/Users/Tarkov/Desktop/general"#chemin choisis ou creer le dossier stocker dans la var path
+import random as r
+liste100NombrePremier = [101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311,313,317,331,337,347,349,353,359,367,373,379,383,389,397,401,409,419,421,431,433,439,443,449,457,461,463,467,479,487,491,499,503,509,521,523,541,547,557,563,569,571,577,587,593,599,601,607,613,617,619,631,641,643,647,653,659,661,673,677,683,691,701,709,719,727,733,739,743,751,757,761,769,773,787,797,809,811,821,823,827,829,839,853,857,859,863,877,881,883,887,907,911,919,929,937,941,947,953,967,971,977,983,991,997]
+test = False
+while test == False:
+    # Demander le chemin
+    # Si chemin == Vide alors le forcé à C:/Mes Documents par défaut
+    try:
+        # Tente de créer le dossier
+        path = input("rentrez le chemin ou sauvegarder le dossier qui contiendra vos message chiffrer: ")#chemin choisis ou creer le dossier stocker dans la var path
+        nom_dossier = input("rentrer le nom du dossier a cree(ne rentrez pas le meme dossier que vous avez deja creer): ")
+        if len(path) == 0:
+            print("vous n'avez rien rentrer")
+            continue
+        if os.path.exists(path) == 0:
+            print("chemin non existant")
+            continue
+        if not os.path.exists(nom_dossier):
+            os.makedirs(nom_dossier)
+        test = True
+    except:
+        #alerte : recommencez
+        continue        
 while True:#fais une boucle infinis pour tout le programme afin de redemander chaque action a l'utilisateur
     print("--------Bienvenue dans la matrix--------")
     #demande si l'user veux chiffrer dechiffrer ou stop le prog
@@ -39,12 +60,9 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
                 if file == "oui":
                     nom_file = input("Qu'elle nom lui donner vous: ") 
-                    #si le dossier X n'existe pas il le cree
-                    if not os.path.exists("X"):
-                        os.makedirs("X")
                     #si il existe il prend le chemin du dossier et le sauvegarde a l'emplacement specifier
-                    if os.path.exists("X"):
-                        path = "/Users/Tarkov/Desktop/general/X"
+                    if os.path.exists(nom_dossier):
+                        path += "/" + nom_dossier
                         completeName = os.path.join(path, nom_file)
                         print("sauvegarder ici " + completeName)
                         while True:
@@ -94,10 +112,8 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
                 if file == "oui":
                     nom_file = input("Qu'elle nom lui donner vous: ") 
-                    if not os.path.exists("X"):
-                        os.makedirs("X")
-                    if os.path.exists("X"):
-                        path = "/Users/Tarkov/Desktop/general/X"
+                    if os.path.exists(nom_dossier):
+                        path += "/" + nom_dossier
                         completeName = os.path.join(path, nom_file)
                         print("sauvegarder ici " + completeName)
                         while True:
@@ -131,10 +147,8 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ") 
                 if file == "oui":
                     nom_file = input("Qu'elle nom lui donner vous: ") 
-                    if not os.path.exists("X"):
-                        os.makedirs("X")
-                    if os.path.exists("X"):
-                        path = "/Users/Tarkov/Desktop/general/X"
+                    if os.path.exists(nom_dossier):
+                        path += "/" + nom_dossier
                         completeName = os.path.join(path, nom_file)
                         print("sauvegarder ici " + completeName)
                         while True:
@@ -162,10 +176,8 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
                 if file == "oui":
                     nom_file = input("Qu'elle nom lui donner vous: ") 
-                    if not os.path.exists("X"):
-                        os.makedirs("X")
-                    if os.path.exists("X"):
-                        path = "/Users/Tarkov/Desktop/general/X"
+                    if os.path.exists(nom_dossier):
+                        path += "/" + nom_dossier
                         completeName = os.path.join(path, nom_file)
                         print("sauvegarder ici " + completeName)
                         while True:
@@ -199,4 +211,5 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
     else:
         print("choisissez 1,2,3")
         continue
+
 
