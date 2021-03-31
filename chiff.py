@@ -103,7 +103,10 @@ def QubitChiff(message_a_chiff:str)->str:
     #return "".join(mess)
         
 #print(QubitChiff("salut"))
-def substitution(message):
+def substitution(message:str)->str:
+    """
+        chiffrement par subsitution
+    """
     alphabet = []
     for nombre in range(97,123):
         alphabet.append(chr(nombre))
@@ -117,7 +120,7 @@ def substitution(message):
 
     print(clef)
     return chiffrage
-print(substitution("salut"))
+#print(substitution("salut"))
 
 
 def dechiffcesar(message_code):
