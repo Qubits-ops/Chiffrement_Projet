@@ -9,17 +9,17 @@ liste100NombrePremier = [101,103,107,109,113,127,131,137,139,149,151,157,163,167
 test = False
 while test == False:
     # Demander le chemin
+    path = input("rentrez le chemin ou sauvegarder le dossier qui contiendra vos message chiffrer: ")#chemin choisis ou creer le dossier stocker dans la var path
     # Si chemin == Vide alors le forcé à C:/Mes Documents par défaut
+    if len(path) == 0:
+        print("vous n'avez rien rentrer")
+        continue
+    if os.path.exists(path) == 0:
+        print("chemin non existant")
+        continue
     try:
         # Tente de créer le dossier
-        path = input("rentrez le chemin ou sauvegarder le dossier qui contiendra vos message chiffrer: ")#chemin choisis ou creer le dossier stocker dans la var path
         nom_dossier = input("rentrer le nom du dossier a cree(ne rentrez pas le meme dossier que vous avez deja creer): ")
-        if len(path) == 0:
-            print("vous n'avez rien rentrer")
-            continue
-        if os.path.exists(path) == 0:
-            print("chemin non existant")
-            continue
         if not os.path.exists(nom_dossier):
             os.makedirs(nom_dossier)
         test = True
