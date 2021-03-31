@@ -121,3 +121,10 @@ for lettre in message:
 print(clef)
 print(chiffrage)
 
+def dechiffcesar(message_code):
+     dict_message_decode = dict()
+    # Il y'a 26 clés différentes à tester : de 0 à 25
+     for cle in range(0, 26):
+         dict_message_decode[cle] = CesarChiff(cle, message_code)
+         
+     return dict_message_decode
