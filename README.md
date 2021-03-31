@@ -16,6 +16,7 @@ Solutions:
 - regarder des video qui explique / les aides du Professeur
 
 date:
+
 Avant non date:
 - (sam)chiffrement cesar xor qubit chiff commencement RSA mis en place du fichier main et des sont programme, creation d'un executable et mis en place des fichiers readme et de install.sh.
 - (oscar)tous les dechiffremement, chiffrement vigenere et idee de faire un site.
