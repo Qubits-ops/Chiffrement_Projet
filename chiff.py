@@ -1,3 +1,6 @@
+from random import *
+from copy import *
+
 def cryptage(cle:int, lettre:str)->str:
     """Encode une lettre grâce à une clé. L'encodage est le déplacement
     de la lettre dans l'alphabet par rapport à la valeur de la clé"""
@@ -100,26 +103,22 @@ def QubitChiff(message_a_chiff:str)->str:
     #return "".join(mess)
         
 #print(QubitChiff("salut"))
+def substitution(message):
+    alphabet = []
+    for nombre in range(97,123):
+        alphabet.append(chr(nombre))
     
-from random import *
-from copy import *
+    clef = deepcopy(alphabet)
+    shuffle(clef)
+    chiffrage = str()
 
-alphabet = []
-for nombre in range(97,123):
-    alphabet.append(chr(nombre))
-    
-clef = deepcopy(alphabet)
-shuffle(clef)
+    for lettre in message:
+        chiffrage += clef[ord(lettre)-97]
 
-message = input("Entrez votre message:")
+    print(clef)
+    return chiffrage
+print(substitution("salut"))
 
-chiffrage = str()
-
-for lettre in message:
-    chiffrage += clef[ord(lettre)-97]
-
-print(clef)
-print(chiffrage)
 
 def dechiffcesar(message_code):
      dict_message_decode = dict()
