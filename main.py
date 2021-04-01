@@ -1,4 +1,4 @@
-
+import json
 from chiff import *#importe notre propre bibliotheque ou il y a les fonctions de chiffrement
 from math2 import *#importe notre propre bibliotheque math ou il y a les fonctions de math
 from time import *#importe la bibliotheque time
@@ -25,7 +25,20 @@ while test == False:
         test = True
     except:
         #alerte : recommencez
-        continue        
+        continue
+if not os.path.exists("U:\Chiffrement_Projet-main"):
+    data_user = input("rentrez votre chemin: ")
+    path_defaut = {"defaut":path}
+    with open("preference_user.json","w") as f:
+        json.dump(path_defaut,f)
+
+else:
+    print("deja existant")
+filin = open("preference_user.json","r")
+ligne = filin.readline()
+print(ligne)
+dico = json.loads(ligne)
+print(dico["defaut"])
 while True:#fais une boucle infinis pour tout le programme afin de redemander chaque action a l'utilisateur
     print("--------Bienvenue dans la matrix--------")
     #demande si l'user veux chiffrer dechiffrer ou stop le prog
@@ -41,6 +54,7 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
         print("-3- Rsa chiffrement")
         print("-4- Vigenere")
         print("-5- QubitChiff")
+        print("-6- Substitutions Chiffrement")
         choixchiff = int(input("Entrez votre choix: "))
         if choixchiff == 1:
             print("on va chiffrer avec notre ami cesar")
@@ -170,7 +184,7 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                     print("rentrez oui ou non!")
         elif choixchiff == 5:
             while True:
-                message_a_chiff = input("rentre le message a chiffrer")
+                message_a_chiff = input("rentre le message a chiffrer: ")
                 print(QubitChiff(message_a_chiff))
                 #expliquer plus haut
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
@@ -200,7 +214,37 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                 """si l'utilisateur choisis 2 on dechiffre pas encore mis en place oscar fais de sont cote et moi du miens donc quand je copie sont code
                 dans le projet il ya le dechiffrement du viginere dans le choix chiffrer mais on compte tout arranger quand on aura finis tous 
                 les dechiffrages et tout placer dans choix 2 donc dechiffrer.
-                """
+                    """
+        elif choixchiff == 6:
+            print("on va chiffrer par substitution")
+            while True:
+                message_a_chiff = input("rentre le message a chiffrer: ")
+                print(substitution(message_a_chiff))
+                #expliquer plus haut
+                file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
+                if file == "oui":
+                    nom_file = input("Qu'elle nom lui donner vous: ") 
+                    if os.path.exists(nom_dossier):
+                        path += "/" + nom_dossier
+                        completeName = os.path.join(path, nom_file)
+                        print("sauvegarder ici " + completeName)
+                        while True:
+                            if os.path.join(path):
+                                if os.path.exists(nom_file):
+                                    print("se fichier existe deja donner un autre nom")
+                                    continue
+                                break
+                        file1 = open(completeName, "w")
+                        file1.write(substitution(message_a_chiff))
+                        file1.close()
+                 #demande a l'user si il veux arreter de chiffrer
+                stop = input("Voulez arreter de chiffrer(oui/non): ")
+                if stop == "oui":
+                    break
+                elif stop == "non":
+                    continue
+                else:
+                    print("rentrez oui ou non!")
     elif choix == 2:
         print("on va dechiffrer")
     #stop le programme si l'user decide d'arreter le programme.
@@ -211,5 +255,6 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
     else:
         print("choisissez 1,2,3")
         continue
+
 
 
