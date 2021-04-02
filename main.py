@@ -26,7 +26,11 @@ while test == False:
     except:
         #alerte : recommencez
         continue
-if not os.path.exists("U:\Chiffrement_Projet-main"):
+"""
+    sauvegarde du chemin dans un json toujours pas terminer
+
+"""
+ if not os.path.exists("U:\Chiffrement_Projet-main"):
     data_user = input("rentrez votre chemin: ")
     path_defaut = {"defaut":path}
     with open("preference_user.json","w") as f:
