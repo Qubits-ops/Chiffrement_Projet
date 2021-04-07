@@ -7,11 +7,11 @@ dico = json.loads(ligne)
 for i in dico:
     print(dico.values())
     print("voulez vous garder ce chemin pour sauvegarder votre dossier")
-    f = input("oui/non: ")
-    if f == "oui":
+    choix_chemin = input("oui/non: ")
+    if choix_chemin == "oui":
         print("tres bien")
         pass
-    elif f == "non":
+    elif choix_chemin == "non":
         print("ok")
         if not os.path.exists("U:\Chiffrement_Projet-main"):
             data_user = input("rentrez votre chemin: ")
@@ -21,12 +21,12 @@ for i in dico:
     else:
         print("rentrez un choix valide")
         
-t = input("voulez vous créer un dossier(si pas de chemin alors dossier actuelle par defaut): ")
-if t == "oui":
+choix_cree_dossier = input("voulez vous créer un dossier(si pas de chemin alors dossier actuelle par defaut): ")
+if choix_cree_dossier == "oui":
     nom_dossier = input("rentrer le nom du dossier a cree(ne rentrez pas le meme dossier que vous avez deja creer): ")
     if not os.path.exists(nom_dossier):
         os.makedirs(nom_dossier)
-elif t == "non":
+elif choix_cree_dossier == "non":
     print("d'accord")
 else:
     print("rentrez un choix valide")
