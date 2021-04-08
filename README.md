@@ -27,6 +27,7 @@ Apres Date:
 - (sam)Jeudi 1 avril 14h00 à 15h05 commencement d'ajout de sauvegarde du chemin dans un fichier json afin de sauvegarder la saisie user et ne pas lui redemander
 - (sam) Mardi 6 avril 14h00 16h00 fin de la partie creation d'un dossier a partir d'un chemin user , toujours pas implementer dans fichier main voir fichier test.py
 - (sam) Mercredi 7 avril 15h00 18h00 commencement site web
+- (sam) Jeudi 8 avril 13h54 remplissage du readme.
 
 Atteints:
 - Jeudi 8 avril Programme fonctionnel avec un programme possédant une bonne base à ameliorer bien sur mais deja un programme assez fournis.
