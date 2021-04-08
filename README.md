@@ -29,8 +29,8 @@ Apres Date:
 - (sam) Mercredi 7 avril 15h00 18h00 commencement site web
 
 Atteints:
-Jeudi 8 avril:
-Programme fonctionnel avec un programme possédant une bonne base à ameliorer bien sur mais deja un programme assez fournis.
+- Jeudi 8 avril Programme fonctionnel avec un programme possédant une bonne base à ameliorer bien sur mais deja un programme assez fournis.
+
 Amelioration a apporter:
 - site web
 - reformulation du code (mise en ordre, optimisation)
