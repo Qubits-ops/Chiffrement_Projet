@@ -13,7 +13,7 @@ Les difficultés rencontrées:
 - cryptage des lettres , congruence pour le RSA
 
 Solutions:
-- regarder des videos qui explique / les aides du Professeur
+- regarder des videos qui explique / les aides du Professeur / jeff delaney
 
 date:
 
