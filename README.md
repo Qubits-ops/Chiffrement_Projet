@@ -36,7 +36,7 @@ Amelioration a apporter:
 - site web a la place tkinter
 - reformulation du code (mise en ordre, optimisation)
 - ajouts de nouvelle fonctionnalite
-- RSA (non je ne lacherais pas et je le reussirais meme si hors programme.)
+- RSA (je le reussirais meme si hors programme.)
 
 commentaire:
 - je trouve qu'on a eu une bonne evolution en assez peu de temps ce qui nous permet actuellement de reduire la cadence et donc de n'avoir que as ameliorer certaine partie
