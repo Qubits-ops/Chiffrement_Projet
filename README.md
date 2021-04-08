@@ -36,3 +36,10 @@ Amelioration a apporter:
 - site web
 - reformulation du code (mise en ordre, optimisation)
 - ajouts de nouvelle fonctionnalite
+
+commentaire:
+- je trouve qu'on a eu une bonne evolution en assez peu de temps ce qui nous permet actuellement de reduire la cadence et donc de n'avoir que as ameliorer certaine partie
+du programme et donc de ne pas se soucier de savoir si il nous manque sa ou sa ou sa etc
+j'ai piocher mes sources un peu partout personnellement(sam) github,videos,forum,professeurs pour m'aider, je pense seulement que le code principal doit etre reformuler car un
+peu desorganiser et pas tres intuitif remplacer le systeme de choisir un chiffrement au debut par demander le message de l'user et le chiffrer dans se qu'il veux sa reduirais
+la longueur du programme et serais plus intuitifs.
