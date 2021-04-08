@@ -33,7 +33,7 @@ Atteints:
 - Jeudi 8 avril Programme fonctionnel avec un programme possédant une bonne base à ameliorer bien sur mais deja un programme assez fournis.
 
 Amelioration a apporter:
-- site web
+- site web a la place tkinter
 - reformulation du code (mise en ordre, optimisation)
 - ajouts de nouvelle fonctionnalite
 
