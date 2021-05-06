@@ -25,6 +25,7 @@ def cryptage(cle:int, lettre:str)->str:
     #Si ce n'est pas une lettre
     else:
         return lettre
+ #oscar
 def genererclé(string:str, mdp:str)->str: 
   """""Utilisez la fonction genererclé pour générer la clé. Le mot-clé est annexé à lui-même jusqu'à ce que la longueur du message soit égale à la longueur de la clé."""
   mdp = list(mdp) 
@@ -34,6 +35,7 @@ def genererclé(string:str, mdp:str)->str:
     for i in range(len(string) -len(mdp)): 
       mdp.append(mdp[i % len(mdp)]) 
   return("" . join(mdp)) 
+ #oscar
 def crypt(string:str, mdp:str)->str:
 #Une fois que le cryptage utilisé par la clé généré () pour chiffrer le message qui prend deux arguments, un est le message qui doit être crypté et  le deuxième argument est la clé qui renvoie le texte crypté.
 #Dans la fonction de cryptage, le message et la clé sont ajoutés MODULO 26
@@ -43,6 +45,7 @@ def crypt(string:str, mdp:str)->str:
     x += ord('A') 
     crypt_text.append(chr(x)) 
   return("" . join(crypt_text)) 
+#oscar
 def decrypt(crypt_text:str, mdp:str)->str:
 #Utilisez la fonction de déchiffrement pour déchiffrer le message crypté. Cela prend deux arguments l'un est le texte crypté et le second est la clé utilisée pour le cryptage.
 #Dans le texte de cryptage de la fonction de déchiffrement et la clé est soustrait, puis ajouté 26 modulo 26.
@@ -112,6 +115,7 @@ def QubitChiff(message_a_chiff:str)->str:
     #return "".join(mess)
         
 #print(QubitChiff("salut"))
+#oscar
 def substitution(message:str)->str:
     """
         chiffrement par subsitution
@@ -131,7 +135,7 @@ def substitution(message:str)->str:
     return chiffrage
 #print(substitution("salut"))
 
-
+#oscar
 def dechiffcesar(message_code):
      dict_message_decode = dict()
     # Il y'a 26 clés différentes à tester : de 0 à 25
