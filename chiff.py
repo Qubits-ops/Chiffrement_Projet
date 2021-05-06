@@ -1,5 +1,14 @@
 from random import *
 from copy import *
+import tkinter as tk
+ 
+fenetre = tk.Tk()
+ 
+photo = tk.PhotoImage(file='asciiGood.png')
+ 
+label = tk.Label(fenetre, image=photo)
+label.pack()
+ 
 
 def cryptage(cle:int, lettre:str)->str:
     """Encode une lettre grâce à une clé. L'encodage est le déplacement
