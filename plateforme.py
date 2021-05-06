@@ -10,4 +10,4 @@ def plateforme_detect():
         print("vous etes sur Windows")
     else:
         print("vous etes sur mac")
-plateforme_detect()
+
