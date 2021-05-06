@@ -10,6 +10,7 @@ label = tk.Label(fenetre, image=photo)
 label.pack()
  
 def transistor(beta:int,ic:int,ib:int):
+    assert beta > 100, 'la base doit au nombre de 100 minimum'
     ie = ic + ib#courant sortant = somme courant entrant 
     ic = beta * ib
     return ie,ic
