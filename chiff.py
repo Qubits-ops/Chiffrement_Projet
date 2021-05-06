@@ -9,7 +9,10 @@ photo = tk.PhotoImage(file='asciiGood.png')
 label = tk.Label(fenetre, image=photo)
 label.pack()
  
-
+def transistor(beta:int,ic:int,ib:int):
+    ie = ic + ib#courant sortant = somme courant entrant 
+    ic = beta * ib
+    return ie,ic
 def cryptage(cle:int, lettre:str)->str:
     """Encode une lettre grâce à une clé. L'encodage est le déplacement
     de la lettre dans l'alphabet par rapport à la valeur de la clé"""
