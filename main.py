@@ -220,8 +220,9 @@ while True:#fais une boucle infinis pour tout le programme afin de redemander ch
                     print("rentrez oui ou non!")
         elif choixchiff == 5:
             while True:
-                message_a_chiff = input("rentre le message a chiffrer: ")
-                print(QubitChiff(message_a_chiff))
+                message_a_chiff1 = input("rentre le message a chiffrer: ")
+                cle1 = int(input("entre la cle de decalage: "))
+                print(QubitChiff(message_a_chiff1,cle1))
                 #expliquer plus haut
                 file = input("souhaitez vous sauvegarder le message chiffre dans un fichier(oui/non): ")
                 if file == "oui":
