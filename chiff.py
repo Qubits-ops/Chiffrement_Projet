@@ -83,7 +83,7 @@ def convertirEnBinaire(num:int)->str:
             list.append(1)
         num//=2 #division euclidienne par 2
     return int(''.join(map(str, list[::-1])))
-def QubitChiff(message_a_chiff:str)->str:
+def QubitChiff(message_a_chiff:str,cle:int)->str:
     """
     methode de chiffrement simple par Qubit
     pour dechiffrer convertir les 7 premiers bits du code binaire jusqu'a la fin
@@ -97,9 +97,9 @@ def QubitChiff(message_a_chiff:str)->str:
     97 = a
     115 = s
     c'est le code ASCII des lettre puis on a juste a inverser le tout
-    115 97 108 117 116
-     s   a  l   u   t
-    11101001110101110110011000011110011 = salut
+    115+cle 97+cle 108+cle 117+cle 116+cle
+     s        a        l       u      t
+    11101101110111110111011000111110101 = salut
     voila comment dechiffrer ma methode de chiffrement
     """
     mess = []
@@ -110,15 +110,14 @@ def QubitChiff(message_a_chiff:str)->str:
         mess.append(i)
     mess = list(reversed(mess))
     for i in mess:
-        mess_chiff.append(ord(i))
+        mess_chiff.append(ord(i)+cle)
     for i in mess_chiff:
         k.append(convertirEnBinaire(i))
     for i in k:
         j.append(str(i))
     return "".join(j)
     #return "".join(mess)
-        
-#print(QubitChiff("salut"))
+#print(QubitChiff("salut",2))
 #oscar
 def substitution(message:str)->str:
     """
