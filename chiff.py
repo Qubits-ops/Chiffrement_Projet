@@ -89,7 +89,7 @@ def QubitChiff(message_a_chiff:str,cle:int)->str:
     pour dechiffrer convertir les 7 premiers bits du code binaire jusqu'a la fin
     exemple:
     11101001110101110110011000011110011 = 1110100 1110101 1101100 1100001 1110011
-                                        116    117     108      97      115
+                                        116+cle    117+cle 108+cle  97+cle  115+cle
     ensuite
     116 = t
     117 = u
@@ -97,7 +97,7 @@ def QubitChiff(message_a_chiff:str,cle:int)->str:
     97 = a
     115 = s
     c'est le code ASCII des lettre puis on a juste a inverser le tout
-    115+cle 97+cle 108+cle 117+cle 116+cle
+    115 97 108 117 116
      s        a        l       u      t
     11101101110111110111011000111110101 = salut
     voila comment dechiffrer ma methode de chiffrement
