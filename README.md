@@ -1,5 +1,5 @@
 -- Projet Chiffrement Terminal NSI --
-TOTAL: 1002 ligne de code
+
 Objectif:
 
 Faire differents chiffrements,dechifrements Xor Cesar Vigenere QubitChiff RSA(a venir),creer un site internet de cryptage  en utilisant flask.
